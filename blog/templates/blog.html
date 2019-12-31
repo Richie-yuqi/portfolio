@@ -1,3 +1,13 @@
+<!--<h1> 项目管理 </h1>
+{% for blog in blog.all %}
+{{ blog.title }}
+<br>
+{{blog.date}}	
+<br>
+<img src="{{blog.image.url}}" height="20%">
+<br>
+{{blog.text}}
+{% endfor %}>
 <!--<h1> 主页</h1>  
 {% for gallery in gallery.all %}
 {{ gallery.description }}
@@ -62,10 +72,10 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">我的主页</h1>
+          <h1 class="jumbotron-heading">项目管理</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">我的博客</a>
+            <a href="#" class="btn btn-primary my-2">项目管理</a>
             <a href="#" class="btn btn-secondary my-2">Secondary action</a>
           </p>
         </div>
@@ -73,13 +83,13 @@
 
       <div class="album py-5 bg-light">
         <div class="container">
-        {% for gallery in gallery.all %}	
+        {% for blog in blog.all %}	
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="{{ gallery.image.url }}">
+                <img class="card-img-top" src="{{ blog.image.url }}">
                 <div class="card-body">
-                  <p class="card-text">{{ gallery.description }}</p>
+                  <p class="card-text">{{ blog.title }} {{blog.date}} {{ blog.text }} </p>
                   <div class="d-flex justify-content-between align-items-center">
                   
                   </div>
