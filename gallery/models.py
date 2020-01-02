@@ -9,7 +9,7 @@ class Gallery(models.Model):
 	title = models.CharField(default='作品标题',max_length=50)
     
 	def __str__(self):
-		return self.title 
+		return self.title + '...'
 
     
 

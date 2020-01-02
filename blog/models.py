@@ -1,14 +1,18 @@
 from django.db import models
 
+# Create your models here.
+ 
 
 class Blog(models.Model):	
-	title = models.CharField(default='正文标题', max_length=50)
+	title = models.CharField(default='正文标题',max_length=50)
 	date = models.DateField()
 	image = models.ImageField(default='default.png',upload_to='image/')
-	text = models.CharField(default='正文', max_length=50)
+	text = models.TextField(default='正文')
     
-    # def __str__(self):
-    # 	return self.title
+	def __str__(self):
+		return self.title 
+
+	def blog_page(self):
+		return self.text[:18] + '...'
     
-    # def blog_page(self):
-    #     return self.text[:88] + '...'
+    
